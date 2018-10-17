@@ -6,22 +6,31 @@ Cinema.prototype.filmTitles = function () {
   return this.films.map ( film => film.title)
 };
 
-Cinema.prototype.findByTitle = function (title) {
-  const film = this.films.filter(film => film.title === title);
-  return film[0];
+//  START OF FILTER METHODS
+
+// ONE METHOD TO RULE THEM ALL
+Cinema.prototype.filmsByProperty = function (property, value) {
+  return this.films.filter( film => film[property] === value);
 };
 
-Cinema.prototype.filterByGenre = function (genre) {
-  return this.films.filter(film => film.genre === genre);
-};
+  // Cinema.prototype.findByTitle = function (title) {
+  //   const film = this.films.filter(film => film.title === title);
+  //   return film[0];
+  // };
+  //
+  // Cinema.prototype.filterByGenre = function (genre) {
+  //   return this.films.filter(film => film.genre === genre);
+  // };
+  //
+  // Cinema.prototype.filterByYear = function (year) {
+  //   return this.films.filter(film => film.year === year);
+  // };
+  
+  //  END OF FILTER METHODS
 
-Cinema.prototype.filterByYear = function (year) {
-  return this.films.filter(film => film.year === year);
-};
-
-Cinema.prototype.checkYear = function (year) {
-  return this.films.some(film => film.year === year);
-};
+  Cinema.prototype.checkYear = function (year) {
+    return this.films.some(film => film.year === year);
+  };
 
 // Cinema.prototype.checkYear = function (year) {
 //   let result = false;
